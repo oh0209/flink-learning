@@ -1,0 +1,6 @@
+scala,java
+hadoop,flink
+hive,impala
+hadoop,hive
+hbase,flink
+spark,kafka
