@@ -1,6 +1,5 @@
 package com.ghou.core.source
 
-import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011
 
@@ -42,10 +41,16 @@ object Demo01 {
     properties.setProperty("bootstrap.servers", "localhost:9092")
     properties.setProperty("group.id", "consumer-group")
     val stream = env.addSource(new FlinkKafkaConsumer011[String]("sensor",new SimpleStringSchema(),properties))
-
     stream.print()
+
+    //TODO 自定义
+
     env.execute("test01")
 
   }
+
+}
+
+
 
 }
